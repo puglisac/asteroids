@@ -9,8 +9,8 @@ public class Ship : MonoBehaviour
 
     Vector2 thrustDirection = new Vector2(1,0);
 
-    const float ThrustForce = 0.8f;
-    const float RotateDegreesPerSecond = 30;
+    const float ThrustForce = 1.3f;
+    const float RotateDegreesPerSecond = 70;
 
 
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class Ship : MonoBehaviour
                 rotationAmount *= -1;
             }
             transform.Rotate(Vector3.forward, rotationAmount);
+            thrustDirection = getShipHeading();
         }
     }
 
@@ -47,6 +48,12 @@ public class Ship : MonoBehaviour
             shipRigidBody.AddForce(-thrustDirection * ThrustForce, ForceMode2D.Force);
         }
     }
-
+    Vector2 getShipHeading()
+    {
+        float rotationZ = transform.eulerAngles.z * Mathf.Deg2Rad;
+        float x = Mathf.Cos(rotationZ);
+        float y = Mathf.Sin(rotationZ);
+        return new Vector2(x, y);
+    }
 }
 

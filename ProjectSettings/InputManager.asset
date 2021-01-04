@@ -313,9 +313,9 @@ InputManager:
     m_Name: Rotate
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: right
-    altNegativeButton: left
+    negativeButton: right
+    positiveButton: left
+    altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: 0.001
