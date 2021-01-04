@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// A character
 /// </summary>
-public class ClampInScreen : MonoBehaviour
+public class ScreenWrapping : MonoBehaviour
 {
     // saved for efficiency
     float shipColliderHalfLength;
@@ -28,13 +28,14 @@ public class ClampInScreen : MonoBehaviour
     /// </summary>
     void Update()
 	{
-        Clamp();
+
+        Wrap();
 	}
 
     /// <summary>
     /// Clamps the character in the screen
     /// </summary>
-    void Clamp()
+    void Wrap()
     {
         // clamp position as necessary
         Vector3 position = transform.position;
