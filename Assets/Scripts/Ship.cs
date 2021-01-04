@@ -10,6 +10,8 @@ public class Ship : MonoBehaviour
     Vector2 thrustDirection = new Vector2(1,0);
 
     const float ThrustForce = 0.8f;
+    const float RotateDegreesPerSecond = 30;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,16 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        var rotationInput = Input.GetAxis("Rotate");
+        if (rotationInput!=0)
+        {
+            float rotationAmount = RotateDegreesPerSecond * Time.deltaTime;
+            if (rotationInput < 0)
+            {
+                rotationAmount *= -1;
+            }
+            transform.Rotate(Vector3.forward, rotationAmount);
+        }
     }
 
     void FixedUpdate()
@@ -31,11 +42,11 @@ public class Ship : MonoBehaviour
         {
             shipRigidBody.AddForce(thrustDirection * ThrustForce, ForceMode2D.Force);
         }
+        if (Input.GetAxis("Thrust") < 0)
+        {
+            shipRigidBody.AddForce(-thrustDirection * ThrustForce, ForceMode2D.Force);
+        }
     }
 
-    void OnBecameInvisible()
-    {
-        
-    }
 }
 

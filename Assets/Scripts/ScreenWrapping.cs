@@ -26,7 +26,7 @@ public class ScreenWrapping : MonoBehaviour
     /// <summary>
     /// Update is called once per frame
     /// </summary>
-    void Update()
+    void OnBecameInvisible()
 	{
 
         Wrap();
@@ -45,7 +45,7 @@ public class ScreenWrapping : MonoBehaviour
         }
         if (position.x + shipColliderHalfLength < ScreenUtils.ScreenLeft)
         {
-            position.x = ScreenUtils.ScreenLeft + shipColliderHalfLength;
+            position.x = ScreenUtils.ScreenRight + shipColliderHalfLength;
         }
         if (position.y - shipColliderHalfHeight > ScreenUtils.ScreenTop)
         {
