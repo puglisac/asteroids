@@ -14,10 +14,10 @@ public static class ScreenUtils
     static int screenHeight;
 
     // cached for efficient boundary checking
-    static float screenLeft;
-    static float screenRight;
-    static float screenTop;
-    static float screenBottom;
+    public static float screenLeft;
+    public static float screenRight;
+    public static float screenTop;
+    public static float screenBottom;
 
     #endregion
 
