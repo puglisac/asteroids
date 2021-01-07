@@ -8,8 +8,8 @@ using UnityEngine;
 public class ScreenWrapping : MonoBehaviour
 {
     // saved for efficiency
-    float shipColliderHalfLength;
-    float shipColliderHalfHeight;
+    float colliderHalfLength;
+    float colliderHalfHeight;
 
     /// <summary>
     /// Use this for initialization
@@ -18,8 +18,8 @@ public class ScreenWrapping : MonoBehaviour
 	{
         // save for efficiency
         BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
-        shipColliderHalfLength = collider.size.x / 2;
-        shipColliderHalfHeight = collider.size.x / 2;
+        colliderHalfLength = collider.size.x / 2;
+        colliderHalfHeight = collider.size.x / 2;
 
     }
 
@@ -39,21 +39,21 @@ public class ScreenWrapping : MonoBehaviour
     {
         // clamp position as necessary
         Vector3 position = transform.position;
-        if (position.x - shipColliderHalfLength > ScreenUtils.ScreenRight)
+        if (position.x - colliderHalfLength > ScreenUtils.ScreenRight)
         {
-            position.x = ScreenUtils.ScreenLeft - shipColliderHalfLength;
+            position.x = ScreenUtils.ScreenLeft - colliderHalfLength;
         }
-        if (position.x + shipColliderHalfLength < ScreenUtils.ScreenLeft)
+        if (position.x + colliderHalfLength < ScreenUtils.ScreenLeft)
         {
-            position.x = ScreenUtils.ScreenRight + shipColliderHalfLength;
+            position.x = ScreenUtils.ScreenRight + colliderHalfLength;
         }
-        if (position.y - shipColliderHalfHeight > ScreenUtils.ScreenTop)
+        if (position.y - colliderHalfHeight > ScreenUtils.ScreenTop)
         {
-            position.y = ScreenUtils.ScreenBottom - shipColliderHalfHeight;
+            position.y = ScreenUtils.ScreenBottom - colliderHalfHeight;
         }
-        if (position.y + shipColliderHalfHeight < ScreenUtils.ScreenBottom)
+        if (position.y + colliderHalfHeight < ScreenUtils.ScreenBottom)
         {
-            position.y = ScreenUtils.ScreenTop + shipColliderHalfHeight;
+            position.y = ScreenUtils.ScreenTop + colliderHalfHeight;
         }
         transform.position = position;
     }

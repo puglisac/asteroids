@@ -48,6 +48,7 @@ public class Ship : MonoBehaviour
             shipRigidBody.AddForce(-thrustDirection * ThrustForce, ForceMode2D.Force);
         }
     }
+
     Vector2 getShipHeading()
     {
         float rotationZ = transform.eulerAngles.z * Mathf.Deg2Rad;

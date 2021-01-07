@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 494fd74b78a454014a4ce1e34fb3fd4a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RedRock: {fileID: 21300000, guid: dd275074ab7964cd6abc911c82ba86fc, type: 3}
+  - GreenRock: {fileID: 21300000, guid: 989fb72b936a54645969a831fcc44b8a, type: 3}
+  - WhiteRock: {fileID: 21300000, guid: bb4682ef06cc94d4ebc05d645fef9478, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
