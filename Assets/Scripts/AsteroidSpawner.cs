@@ -30,7 +30,7 @@ public class AsteroidSpawner : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // check for time to spawn a new teddy bear
+        // check for time to spawn a new Asteroid
         if (spawnTimer.Finished)
         {
             if (GameObject.FindGameObjectsWithTag("rock").Length < 3)
@@ -45,14 +45,13 @@ public class AsteroidSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Spawns a new teddy bear at a random location
+    /// Spawns a new Asteroid  at a random location
     /// </summary>
     void SpawnRock()
     {
         Vector3 location = new Vector3(Random.Range(ScreenUtils.screenLeft, ScreenUtils.screenRight),
                     Random.Range(ScreenUtils.screenBottom, ScreenUtils.screenTop),
                     -Camera.main.transform.position.z);
-        Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
         GameObject rock = Instantiate(prefabRock) as GameObject;
         rock.transform.position = location;
     }

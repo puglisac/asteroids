@@ -40,10 +40,9 @@ public class Asteroid : MonoBehaviour
 
     public Sprite randomSprite()
     {
-        System.Random rnd = new System.Random();
-        int randomInt = rnd.Next(1,4);
+        int randomInt = Random.Range(1,4);
 
-        if(randomInt == 1)
+        if (randomInt == 1)
         {
             return RedRock;
         }

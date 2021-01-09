@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    [SerializeField]
+    GameObject prefabExplosion;
 
     Rigidbody2D shipRigidBody;
 
@@ -55,6 +57,14 @@ public class Ship : MonoBehaviour
         float x = Mathf.Cos(rotationZ);
         float y = Mathf.Sin(rotationZ);
         return new Vector2(x, y);
+    }
+
+    //destroy ship on collision with asteroid
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+        Instantiate<GameObject>(prefabExplosion, transform.position, Quaternion.identity);
+
     }
 }
 

@@ -243,9 +243,9 @@ GameObject:
   - component: {fileID: 1205075883}
   - component: {fileID: 1205075882}
   - component: {fileID: 1205075885}
-  - component: {fileID: 1205075884}
   - component: {fileID: 1205075887}
   - component: {fileID: 1205075886}
+  - component: {fileID: 1205075884}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -329,6 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92c17fe9d9a84b77abb6c7756307152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabExplosion: {fileID: 4668923906673195741, guid: 28453f20a952c45fabc26c0bd28df2b2,
+    type: 3}
 --- !u!50 &1205075885
 Rigidbody2D:
   serializedVersion: 4
