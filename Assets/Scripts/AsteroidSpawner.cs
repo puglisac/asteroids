@@ -93,13 +93,15 @@ public class AsteroidSpawner : MonoBehaviour
             spawnTries++;
         }
 
+        //add asteroid if no collisions
         if (Physics2D.OverlapArea(min, max) == null)
         {
-            GameObject rock = Instantiate(prefabRock) as GameObject;
+            GameObject rock = Instantiate(prefabRock);
             rock.transform.position = location;
         }
     }
 
+    //set min and max to check for collisions
     void SetMinAndMax(Vector3 location)
     {
         min.x = location.x - asteroidrColliderHalfWidth;
