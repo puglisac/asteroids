@@ -15,4 +15,11 @@ public class GameInitializer : MonoBehaviour
         // initialize screen utils
         ScreenUtils.Initialize();
     }
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+    }
 }
