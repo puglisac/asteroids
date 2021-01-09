@@ -59,7 +59,7 @@ public class AsteroidSpawner : MonoBehaviour
         // check for time to spawn a new Asteroid
         if (spawnTimer.Finished)
         {
-            if (GameObject.FindGameObjectsWithTag("rock").Length < 3)
+            if (GameObject.FindGameObjectsWithTag("rock").Length < 20)
             {
                 SpawnRock();
 

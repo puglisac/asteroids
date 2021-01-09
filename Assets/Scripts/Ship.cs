@@ -45,10 +45,6 @@ public class Ship : MonoBehaviour
         {
             shipRigidBody.AddForce(thrustDirection * ThrustForce, ForceMode2D.Force);
         }
-        if (Input.GetAxis("Thrust") < 0)
-        {
-            shipRigidBody.AddForce(-thrustDirection * ThrustForce, ForceMode2D.Force);
-        }
     }
 
     Vector2 getShipHeading()
