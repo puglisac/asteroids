@@ -19,7 +19,7 @@ public class ScreenWrapping : MonoBehaviour
         // save for efficiency
         BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
         colliderHalfLength = collider.size.x / 2;
-        colliderHalfHeight = collider.size.x / 2;
+        colliderHalfHeight = collider.size.y / 2;
 
     }
 
@@ -43,7 +43,7 @@ public class ScreenWrapping : MonoBehaviour
         {
             position.x = ScreenUtils.ScreenLeft - colliderHalfLength;
         }
-        if (position.x + colliderHalfLength < ScreenUtils.ScreenLeft)
+        else if (position.x + colliderHalfLength < ScreenUtils.ScreenLeft)
         {
             position.x = ScreenUtils.ScreenRight + colliderHalfLength;
         }
@@ -51,7 +51,7 @@ public class ScreenWrapping : MonoBehaviour
         {
             position.y = ScreenUtils.ScreenBottom - colliderHalfHeight;
         }
-        if (position.y + colliderHalfHeight < ScreenUtils.ScreenBottom)
+        else if (position.y + colliderHalfHeight < ScreenUtils.ScreenBottom)
         {
             position.y = ScreenUtils.ScreenTop + colliderHalfHeight;
         }
