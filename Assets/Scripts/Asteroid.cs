@@ -11,11 +11,14 @@ public class Asteroid : MonoBehaviour
     Sprite GreenRock;
     [SerializeField]
     Sprite WhiteRock;
+    [SerializeField]
+    GameObject prefabExplosion;
 
     Rigidbody2D asteroidRigidBody;
     SpriteRenderer asteroidSprite;
 
     const float ThrustForce = 20f;
+    Vector3 ExplosionSize = new Vector3(2, 2, 1);
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,17 @@ public class Asteroid : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "torpedo")
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            GameObject explosion = Instantiate<GameObject>(prefabExplosion, transform.position, Quaternion.identity);
+            explosion.transform.localScale = ExplosionSize;
+        }
     }
 
     public Vector2 RandomVector2()

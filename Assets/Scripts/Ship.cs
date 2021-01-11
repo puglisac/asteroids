@@ -6,6 +6,8 @@ public class Ship : MonoBehaviour
 {
     [SerializeField]
     GameObject prefabExplosion;
+    [SerializeField]
+    GameObject prefabTorpedo;
 
     Rigidbody2D shipRigidBody;
 
@@ -36,6 +38,12 @@ public class Ship : MonoBehaviour
             transform.Rotate(Vector3.forward, rotationAmount);
             thrustDirection = getShipHeading();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Quaternion shipRotation = gameObject.transform.rotation;
+            Instantiate<GameObject>(prefabTorpedo, transform.position, shipRotation);       
+        }
     }
 
     void FixedUpdate()
@@ -47,7 +55,7 @@ public class Ship : MonoBehaviour
         }
     }
 
-    Vector2 getShipHeading()
+    public Vector2 getShipHeading()
     {
         float rotationZ = transform.eulerAngles.z * Mathf.Deg2Rad;
         float x = Mathf.Cos(rotationZ);
