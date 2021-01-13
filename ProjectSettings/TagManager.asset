@@ -44,12 +44,12 @@ TagManager:
   - name: Background
     uniqueID: 2639346523
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Torpedo
     uniqueID: 3181922697
     locked: 0
   - name: Ship
     uniqueID: 3686363339
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

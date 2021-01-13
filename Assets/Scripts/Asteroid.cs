@@ -27,6 +27,7 @@ public class Asteroid : MonoBehaviour
         asteroidSprite.sprite = randomSprite();
         asteroidRigidBody = gameObject.GetComponent<Rigidbody2D>();
         asteroidRigidBody.AddForce(RandomVector2() * ThrustForce, ForceMode2D.Force);
+        asteroidRigidBody.AddTorque(.5f);
     }
 
     // Update is called once per frame
