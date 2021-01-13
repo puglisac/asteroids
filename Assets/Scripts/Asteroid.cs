@@ -17,6 +17,8 @@ public class Asteroid : MonoBehaviour
     Rigidbody2D asteroidRigidBody;
     SpriteRenderer asteroidSprite;
 
+    ScoreCanvas score;
+
     const float ThrustForce = 20f;
     Vector3 ExplosionSize = new Vector3(2, 2, 1);
 
@@ -27,7 +29,10 @@ public class Asteroid : MonoBehaviour
         asteroidSprite.sprite = randomSprite();
         asteroidRigidBody = gameObject.GetComponent<Rigidbody2D>();
         asteroidRigidBody.AddForce(RandomVector2() * ThrustForce, ForceMode2D.Force);
-        asteroidRigidBody.AddTorque(.5f);
+        asteroidRigidBody.AddTorque(Random.Range(-2,2));
+
+        GameObject canvas = GameObject.FindGameObjectWithTag("scoreCanvas");
+        score = canvas.GetComponent<ScoreCanvas>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,7 @@ public class Asteroid : MonoBehaviour
         
     }
 
+    //destroys asteroid and renders explosion when shot with torpedo
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "torpedo")
@@ -44,15 +50,18 @@ public class Asteroid : MonoBehaviour
             Destroy(collision.gameObject);
             GameObject explosion = Instantiate<GameObject>(prefabExplosion, transform.position, Quaternion.identity);
             explosion.transform.localScale = ExplosionSize;
+            score.updateScore(10);
         }
     }
 
+    //returns a random Vecto2
     public Vector2 RandomVector2()
     {
         float random = Random.value*360;
         return new Vector2(Mathf.Cos(random), Mathf.Sin(random));
     }
 
+    //returns a random sprite
     public Sprite randomSprite()
     {
         int randomInt = Random.Range(1,4);
