@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class Ship : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate<GameObject>(prefabExplosion, transform.position, Quaternion.identity);
-
+        SceneManager.LoadScene("EndGame");
     }
 }
 

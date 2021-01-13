@@ -7,6 +7,12 @@ public class AsteroidSpawner : MonoBehaviour
     // needed for spawning
     [SerializeField]
     GameObject prefabRock;
+    [SerializeField]
+    Sprite RedRock;
+    [SerializeField]
+    Sprite GreenRock;
+    [SerializeField]
+    Sprite WhiteRock;
 
     // spawn control
 
@@ -49,6 +55,7 @@ public class AsteroidSpawner : MonoBehaviour
         asteroidrColliderHalfWidth = collider.size.x / 2;
         asteroidColliderHalfHeight = collider.size.y / 2;
         Destroy(tempRock);
+
     }
 
     /// <summary>
@@ -98,6 +105,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             GameObject rock = Instantiate(prefabRock);
             rock.transform.position = location;
+            rock.GetComponent<SpriteRenderer>().sprite = randomSprite();
         }
     }
 
@@ -108,5 +116,24 @@ public class AsteroidSpawner : MonoBehaviour
         min.y = location.y - asteroidColliderHalfHeight;
         max.x = location.x + asteroidrColliderHalfWidth;
         max.y = location.y + asteroidColliderHalfHeight;
+    }
+
+    //returns a random sprite
+    public Sprite randomSprite()
+    {
+        int randomInt = Random.Range(1, 4);
+
+        if (randomInt == 1)
+        {
+            return RedRock;
+        }
+        else if (randomInt == 2)
+        {
+            return GreenRock;
+        }
+        else
+        {
+            return WhiteRock;
+        }
     }
 }

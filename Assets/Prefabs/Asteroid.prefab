@@ -159,5 +159,6 @@ MonoBehaviour:
   RedRock: {fileID: 21300000, guid: dd275074ab7964cd6abc911c82ba86fc, type: 3}
   GreenRock: {fileID: 21300000, guid: 989fb72b936a54645969a831fcc44b8a, type: 3}
   WhiteRock: {fileID: 21300000, guid: bb4682ef06cc94d4ebc05d645fef9478, type: 3}
+  prefabRock: {fileID: 7446876853941142470}
   prefabExplosion: {fileID: 4668923906673195741, guid: 28453f20a952c45fabc26c0bd28df2b2,
     type: 3}

@@ -16,6 +16,14 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            GameObject[] oldScore = GameObject.FindGameObjectsWithTag("scoreCanvas");
+            if (oldScore.Length > 0)
+            {
+                foreach (GameObject score in oldScore)
+                {
+                    Destroy(score);
+                }
+            }
             SceneManager.LoadScene("Scene0");
         }
 

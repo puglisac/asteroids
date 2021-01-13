@@ -298,6 +298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabRock: {fileID: 7446876853941142470, guid: 479c88fe3c807442abaf336de101f71d,
     type: 3}
+  RedRock: {fileID: 21300000, guid: dd275074ab7964cd6abc911c82ba86fc, type: 3}
+  GreenRock: {fileID: 21300000, guid: 989fb72b936a54645969a831fcc44b8a, type: 3}
+  WhiteRock: {fileID: 21300000, guid: bb4682ef06cc94d4ebc05d645fef9478, type: 3}
 --- !u!1 &610670825
 GameObject:
   m_ObjectHideFlags: 0

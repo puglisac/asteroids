@@ -9,6 +9,11 @@ public class ScoreCanvas : MonoBehaviour
     Text scoreText;
 
     int score = 0;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
