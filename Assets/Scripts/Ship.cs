@@ -11,8 +11,6 @@ public class Ship : MonoBehaviour
 
     Rigidbody2D shipRigidBody;
 
-    AudioSource torpedoSound;
-
     Vector2 thrustDirection = new Vector2(1,0);
 
     const float ThrustForce = 1.3f;
@@ -26,7 +24,7 @@ public class Ship : MonoBehaviour
     {
         //set the shipRigidBody field to the Rigidbody2D of the game object
         shipRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        torpedoSound = GetComponents<AudioSource>()[0];
+        AudioManager.Play(AudioClipName.Ambient);
     }
 
     // Update is called once per frame
@@ -48,7 +46,7 @@ public class Ship : MonoBehaviour
         {
             Quaternion shipRotation = gameObject.transform.rotation;
             Instantiate<GameObject>(prefabTorpedo, transform.position, shipRotation);
-            torpedoSound.Play();
+            AudioManager.Play(AudioClipName.Torpedo);
         }
     }
 
