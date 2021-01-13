@@ -23,6 +23,7 @@ public class Asteroid : MonoBehaviour
     Vector3 ExplosionSize = new Vector3(2, 2, 1);
 
     // Start is called before the first frame update
+    // add random force direction, sprite, torque to asteroid
     void Start()
     {
         asteroidSprite = gameObject.GetComponent<SpriteRenderer>();
